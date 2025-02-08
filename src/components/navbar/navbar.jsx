@@ -10,21 +10,28 @@ import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 990);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 990);
     };
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 50); // Change color when scrolled 50px or more
+    };
 
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+ 
   console.log(isMobile)
   return (
     <div>
-      <div className='navbar'>
+      <div className={`navbar ${isSticky ? 'sticky-navbar' : ''}`}>
         <div className="left">
           <img className='logo' src={Logo} />
         </div>
@@ -39,10 +46,10 @@ export const Navbar = () => {
 
             <div>
 
-              <span className="navData">Home</span>
-              <span className="navData">About</span>
-              <span className="navData">Conatct</span>
-              <span className="navData">Help</span>
+              <span className={`navData ${isSticky ? 'changeColor' : ''}`}>Home</span>
+              <span className={`navData ${isSticky ? 'changeColor' : ''}`}>About</span>
+              <span className={`navData ${isSticky ? 'changeColor' : ''}`}>Conatct</span>
+              <span className={`navData ${isSticky ? 'changeColor' : ''}`}>Help</span>
             </div>
           )}
 
