@@ -25,12 +25,10 @@ export const Cards = () => {
         <div className='mainCards'>
             <motion.div
                 className='section_1'
+                initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                ref={refOne}
-                initial={{ opacity: 0, x: -100 }}
-                animate={inViewOne ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: .8 }}
+                
             >
                 <motion.div className='headings'>
                     <motion.span className="h6" variants={cardVariants}>Features</motion.span>
@@ -67,9 +65,10 @@ export const Cards = () => {
             </motion.div>
 
             <div className='section_2'>
-                <motion.div className='h_phone_div' ref={refOne}
+                <motion.div className='h_phone_div'
+                 ref={refTwo}
                     initial={{ opacity: 0, x: 100 }}
-                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                    animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: .8 }}>
                     <motion.div
                         animate={{ y: [0, 20, 0] }}

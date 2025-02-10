@@ -109,6 +109,9 @@
     .footer_bg{
         height: 40vh;
     }
+    .footer_main{
+        height: 40vh;
+    }
    .footer_logo .logo{
     width: 50%;
 
@@ -143,7 +146,7 @@
 /* Below 360px */
 @media (max-width: 360px) {
     .footer_icons{
-        width: 100%;
+        width: 90%;
         padding: 10px;
     }
    
