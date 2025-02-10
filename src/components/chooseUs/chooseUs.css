@@ -1,6 +1,5 @@
 .chooseUs{
     width: 100%;
-    /* background-color: #fff; */
     display: flex;
     align-items: center;
   justify-content: center;
@@ -10,7 +9,6 @@
 
 .choseOne{
     width: 50%;
-    /* height: 500px; */
     padding: 50px;
     display: flex;
     flex-direction: column;

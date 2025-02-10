@@ -3,8 +3,7 @@ import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import { motion, useInView } from "framer-motion";
 import EmailIcon from '@mui/icons-material/Email';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 import './newsletter.css';
 export const NewsLetter = () => {
     const refOne = React.useRef(null);

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+
+
 export const FullCard = () => {
     const cardVariants = {
         hidden: { opacity: 0, x: -50 },

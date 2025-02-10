@@ -7,7 +7,7 @@ import MicIcon from '@mui/icons-material/Mic';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import WifiIcon from '@mui/icons-material/Wifi';
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import headphone2 from '../../assets/headphone2.png';
 
 export const Cards = () => {
@@ -15,29 +15,37 @@ export const Cards = () => {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
     };
+    const refOne = React.useRef(null);
+    const refTwo = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
+    const inViewTwo = useInView(refTwo, { triggerOnce: true });
 
     return (
         <div className='mainCards'>
-            <motion.div 
-                className='section_1' 
-                initial="hidden" 
-                whileInView="visible" 
+            <motion.div
+                className='section_1'
+                whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
+                ref={refOne}
+                initial={{ opacity: 0, x: -100 }}
+                animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: .8 }}
             >
                 <motion.div className='headings'>
                     <motion.span className="h6" variants={cardVariants}>Features</motion.span>
                     <motion.span className="outstanding" variants={cardVariants}>
                         Outstanding Features
                     </motion.span>
-                        <Box sx={{ width: '60%', padding: 2 }}>
-                            <LinearProgress />
-                        </Box>
+                    <Box sx={{ width: '60%', padding: 2 }}>
+                        <LinearProgress />
+                    </Box>
                 </motion.div>
 
                 <div className="smallCards">
                     {[
-                        { icon: <MicIcon  className='cardicon' />, title: "Virtual Surround" },
-                        { icon: <MusicNoteIcon  className='cardicon' />, title: "Noise Cancelling" },
+                        { icon: <MicIcon className='cardicon' />, title: "Virtual Surround" },
+                        { icon: <MusicNoteIcon className='cardicon' />, title: "Noise Cancelling" },
                         { icon: <VolumeUpIcon className='cardicon' />, title: "Sound Control" },
                         { icon: <WifiIcon className='cardicon' />, title: "Wireless Freedom" }
                     ].map((item, index) => (
@@ -59,21 +67,26 @@ export const Cards = () => {
             </motion.div>
 
             <div className='section_2'>
-                <div className='h_phone_div'>
+                <motion.div className='h_phone_div' ref={refOne}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: .8 }}>
                     <motion.div
                         animate={{ y: [0, 20, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
+
                     >
                         <img className='headphone2' src={headphone2} alt="Headphone" />
                     </motion.div>
-                </div>
-                
-                <motion.div 
-                    className='textSection' 
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                </motion.div>
+
+                <motion.div
+                    className='textSection'
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    ref={refOne}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: .8 }}
                 >
                     <span className="sec2_text1">about product</span>
                     <span className='sec2_text2'>

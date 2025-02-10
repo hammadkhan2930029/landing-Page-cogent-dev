@@ -135,7 +135,6 @@
 }
 .textSection{
     width: 100%;
-    /* background-color: #d0d1d5; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

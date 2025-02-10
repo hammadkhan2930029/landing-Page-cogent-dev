@@ -16,7 +16,6 @@
     height: 50vh;
 }
 .footer_logo{
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     padding: 10px;

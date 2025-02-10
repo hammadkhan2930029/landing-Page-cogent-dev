@@ -17,7 +17,7 @@ export const Navbar = () => {
       setIsMobile(window.innerWidth < 990);
     };
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 50); // Change color when scrolled 50px or more
+      setIsSticky(window.scrollY > 50); 
     };
 
     window.addEventListener('resize', handleResize);
@@ -79,7 +79,7 @@ export const Navbar = () => {
           </div>
           <div className="imgDiv">
             <motion.div
-              animate={{ y: [0, 20, 0] }}  // Y-axis animation cycle
+              animate={{ y: [0, 20, 0] }}  
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               <img className='img' src={headphone} />
