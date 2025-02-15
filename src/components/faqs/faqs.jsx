@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './faqs.css'
 import Box from '@mui/material/Box';

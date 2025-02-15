@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './fullCard.css';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -14,8 +15,7 @@ export const FullCard = () => {
     return (
         <motion.div className='fullCard' >
             <motion.div className="back"
-                // initial="hidden"
-                // whileInView="visible"
+            
                 ref={refOne}
                 initial={{ opacity: 0, x: -100 }}
                 animate={inViewOne ? { opacity: 1, x: 0 } : {}}

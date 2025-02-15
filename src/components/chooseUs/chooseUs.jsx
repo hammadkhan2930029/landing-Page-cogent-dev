@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { motion, useInView } from "framer-motion";
-
-import AssessmentIcon from '@mui/icons-material/Assessment';
 import './chooseUs.css';
 import 'react-slideshow-image/dist/styles.css'
 import one from '../../../public/images/one.png';
 import two from '../../../public/images/two.png';
 import three from '../../../public/images/three.png';
-
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import BrushIcon from '@mui/icons-material/Brush';
 import WindowIcon from '@mui/icons-material/Window';
@@ -114,3 +111,4 @@ export const ChooseUs = () => {
     </motion.div>
   )
 }
+

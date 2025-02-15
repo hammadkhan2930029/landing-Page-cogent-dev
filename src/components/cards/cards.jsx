@@ -1,12 +1,5 @@
-
 import React from 'react';
 import './cards.css';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
-import MicIcon from '@mui/icons-material/Mic';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import WifiIcon from '@mui/icons-material/Wifi';
 import { motion, useInView } from "framer-motion";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
@@ -91,7 +84,7 @@ export const Cards = () => {
                     animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: .8 }}
                 >
-                    {/* <span className="sec2_text1">about product</span> */}
+                
                     <span className='sec2_text2'>
                     The Perfect Fashion Essential to Elevate Your Style
                     </span>
@@ -106,3 +99,4 @@ export const Cards = () => {
         </div>
     );
 };
+

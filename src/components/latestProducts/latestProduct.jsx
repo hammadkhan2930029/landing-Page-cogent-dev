@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import './latestProduct.css';
 import { motion, useInView } from "framer-motion";
@@ -7,8 +8,7 @@ import two from '../../assets/two.png';
 import three from '../../assets/three.png';
 
 
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 
 
 const cardsData = [
@@ -90,9 +90,7 @@ export const Latest = () => {
                               
                                 <h2 className='price'>{item.price}</h2>
                                 <button className='btn_latest'>Buy now</button>
-                                {/* <Stack spacing={2} direction="row">
-                                    <Button className='btn_latest' variant="contained">Buy now</Button>
-                                </Stack> */}
+                              
                             </div>
 
 
@@ -104,3 +102,4 @@ export const Latest = () => {
         </motion.div>
     )
 }
+

@@ -31,8 +31,8 @@ export const Navbar = () => {
 
   console.log(isMobile)
   return (
-    <div >
-      <div className={`navbar ${isSticky ? 'sticky-navbar' : ''}`}>
+    <div>
+      <div className='navbar'>
         <div className="left">
           <img className='logo' src={logo_t} />
         </div>

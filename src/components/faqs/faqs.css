@@ -1,3 +1,4 @@
+
 .faqs{
     width: 100%;
     padding: 20px;
@@ -19,7 +20,6 @@
 }
 .faqs_left{
     width: 50%;
-    /* height: 80vh; */
 
 }
 .faqs_head{
@@ -75,7 +75,6 @@
     background-color: #1976D2;
     width: 20%;
     padding: 10px;
-    /* height: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,9 +93,7 @@
 .drop_text .text{
     padding-left: 5px;
     padding: 10px;
-    /* text-align:center; */
     font-size: 18px;
-    /* padding-top: 12px; */
     color: #000;
     font-weight: 500;
    
@@ -113,7 +110,6 @@
 /* ----------------------------------------------------------- */
 .faqs_right{
     width: 50%;
-    /* height: 80vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,7 +167,6 @@
     .drop_text .text{
         padding-left: 2px;
         padding: 17px;
-        /* text-align:center; */
         font-size: 16px;
        
        
