@@ -1,31 +1,28 @@
 .navbar {
-    /* background-color:#fff; */
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
-
     position: absolute;
     top: 0;
     z-index: 999;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding: 8px;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
 
+.sticky-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #4777f4;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
 .logo {
     width: 60%
-}
-
-.left {
-    /* background-color: aqua; */
-}
-
-.right {
-    /* background-color: blue; */
-
 }
 
 .navData {
@@ -37,22 +34,35 @@
     cursor: pointer;
 }
 
+
+.changeColor {
+    color: #4777f4;
+    font-size: 18px;
+    padding-left: 10px;
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 /* ---------------------------------------------------------- */
-.shap-container{
+.shap-container {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     overflow: hidden;
+
 }
+
 .shaper {
     position: absolute;
     height: 180%;
     width: 100%;
     display: block;
     border-radius: 145px;
-    background: #4777f4 none repeat scroll 0 0;
+    background-color: #1976D2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     bottom: 0;
     right: 0;
     -webkit-transform: translate(35%, -30%) rotate(-35deg);
@@ -61,14 +71,15 @@
 }
 
 
-.container{
+.container {
     position: relative;
-    max-width: 100%;
-    height: 80vh;
+    width: 100%;
+    height: 65vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
+    margin-top: 130px;
 }
 
 .textside {
@@ -76,10 +87,11 @@
     align-items: start;
     justify-content: start;
     flex-direction: column;
-    margin-top: 90px;
-    width: 100%;
-    padding: 120px;
-    position: relative;
+    width: 40%;
+    padding: 50px;
+  
+
+
 }
 
 .h1 {
@@ -98,106 +110,131 @@
 }
 
 .imgDiv {
-    margin-top: 80px;
-    width: 100%;
-}
-
-.img {
+    
     width: 50%;
-    position: relative;
-  
-}
-
-/* ------------------------- MEDIA QUERIES ------------------------- */
-/* 1180px to 992px */
-@media (max-width: 1180px) {
    
 
 }
 
+.img {
+    width: 80%;
+
+}
+
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {}
+
 /* 991px to 768px */
 @media (max-width: 991px) {
-    .shaper{
+    .shaper {
         height: 140%;
     }
-    .h1{
+
+    .h1 {
         font-size: 40px;
     }
-    .img{
+
+    .img {
         width: 80%;
     }
 }
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    .shaper{
+    .shaper {
         height: 120%;
 
     }
-   .textside{
-    padding: 35px;
-   }
-   .img{
-    width: 80%;
-}
+
+    .textside {
+        padding: 35px;
+    }
+
+    .img {
+        width: 80%;
+    }
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .textside{
+    .textside {
         width: 100%;
         padding: 30px;
         margin-top: 10px;
     }
-    .h1{
-        font-size: 32px;
+
+    .h1 {
+        font-size: 52px;
     }
-    .h4{
+
+    .h4 {
+        font-size: 22px;
+    }
+
+    .btn {
         font-size: 14px;
     }
-    .btn{
-        font-size: 14px;
+
+    .img {
+        width: 95%;
     }
-    .img{
-        width: 85%;
+
+    .imgDiv {
+        margin-top: -110px;
+        width: 100%;
     }
-    .imgDiv{
-        margin-top: 0;
+    .container{
+        flex-direction: column;
     }
- 
+  
+
 
 }
 
 @media (max-width: 440px) {
-   .container{
-    flex-direction: column;
-    margin-top: 100px;
-
-   }
-   .h1{
-    font-size: 42px;
-}
-.img{
-    width: 100%;
-    padding: 10px;
-}
-   
-    
-}
-
-/* Below 360px */
-@media (max-width: 360px) {
-    .container{
+    .container {
         flex-direction: column;
         margin-top: 100px;
+
     }
-    .h1{
-        font-size: 32px;
+
+    .h1 {
+        font-size: 42px;
     }
-    .img{
+
+    .img {
         width: 100%;
         padding: 10px;
     }
    
-    
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {
+    .container {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .h1 {
+        font-size: 32px;
+    }
+
+    .imgDiv {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin-top: -125px;
+    }
+    .img {
+        width: 100%;
+        padding: 5px;
+    }
+
+
+
 }

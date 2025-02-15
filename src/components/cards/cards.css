@@ -23,7 +23,8 @@
 .h6 {
     text-transform: uppercase;
     font-size: 15px;
-    color: #4777f4;
+    color: #1976D2;
+
     background-color: rgba(71, 119, 244, 0.22);
     padding: 5px 16px;
     border-radius: 4px;
@@ -69,7 +70,8 @@
 .shap {
     width: 80px;
     height: 80px;
-    background: #4777f4;
+    background-color: #1976D2;
+
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -87,7 +89,14 @@
 }
 
 .card:hover .cardicon {
-    transform: rotate(320deg);
+    transform: rotate(315deg);
+}
+
+.cardText_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .h3 {
@@ -95,11 +104,19 @@
     font-weight: bold;
     color: #333;
     margin-top: 10px;
+    text-align: center;
 }
 
 .cardText {
-    font-size: 14px;
+    font-size: 15px;
     color: #666;
+    text-align: center;
+
+}
+.line{
+    width: 50%;
+    border: 2px solid #4777f4;
+    margin-top: 10px;
 }
 
 @keyframes fadeIn {
@@ -125,17 +142,18 @@
 }
 
 .h_phone_div{
-    width: 100%;
+    width: 50%;
      background-color: #0000
 
 
 }
 .headphone2{
     width: 80%;
+    border-radius: 12px;
+
 }
 .textSection{
-    width: 100%;
-    /* background-color: #d0d1d5; */
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -145,7 +163,7 @@
 .sec2_text1{
     text-transform: uppercase;
     font-size: 15px;
-    color: #4777f4;
+    color: #1976D2;
     background-color: rgba(71, 119, 244, 0.22);
     padding: 5px 16px;
     border-radius: 4px;
@@ -161,6 +179,7 @@
 .sec2_text{
     font-size: 20px;
     color: #666;
+    line-height: 2;
 }
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
@@ -193,14 +212,28 @@
     .section_2{
         flex-direction: column-reverse;
     }
+    .mainCards {
+        margin-top: 45%;
+    
+    
+    }
+    .textSection{
+        width: 100%;
+    }
+    .h_phone_div{
+        width: 100%;
+    }
     
  
 
 }
 
 @media (max-width: 440px) {
-    .mainCards{
-        margin-top: 300px;
+    .mainCards {
+        margin-top: 70%;
+    
+        padding: 5px;
+    
     }
     .outstanding{
         font-size: 28px;
@@ -212,8 +245,11 @@
 
 /* Below 360px */
 @media (max-width: 360px) {
-    .mainCards{
-        margin-top: 300px;
+    .mainCards {
+    
+        padding: 5px;
+        margin-top: 70%;
+    
     }
     .outstanding{
         font-size: 26px;
@@ -226,6 +262,12 @@
     }
     .sec2_text1{
         font-size: 15px;
+    }
+    .h_phone_div{
+        width: 100%;
+    }
+    .textSection{
+        width: 100%;
     }
     
    

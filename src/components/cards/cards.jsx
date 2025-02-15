@@ -1,87 +1,4 @@
-// import React from 'react'
-// import './cards.css';
-// import Box from '@mui/material/Box';
-// import LinearProgress from '@mui/material/LinearProgress';
-// import MicIcon from '@mui/icons-material/Mic';
-// import MusicNoteIcon from '@mui/icons-material/MusicNote';
-// import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-// import WifiIcon from '@mui/icons-material/Wifi';
-// import { motion } from "framer-motion";
-// import headphone2 from '../../assets/headphone2.png'
 
-// export const Cards = () => {
-//     return (
-//         <div className='mainCards'>
-//             <div className='section_1'>
-//                 <div className='headings'>
-//                     <span className="h6">Features</span>
-//                     <span className="outstanding">Outstanding Features</span>
-//                     <Box sx={{ width: '50%', padding: 2 }}>
-//                         <LinearProgress />
-//                     </Box>
-//                 </div>
-//                 <div className="smallCards">
-//                     <div className="card">
-//                         <div className="shap">
-//                             <MicIcon className='cardicon' />
-//                         </div>
-//                         <span className='h3'>Virtual Surround</span>
-//                         <span className="cardText">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet</span>
-//                     </div>
-//                     <div className="card">
-//                         <div className="shap">
-//                             <MusicNoteIcon className='cardicon' />
-
-//                         </div>
-//                         <span className='h3'>Noise Cancelling</span>
-//                         <span className="cardText">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet</span>
-//                     </div>
-//                     <div className="card">
-//                         <div className="shap">
-//                             <VolumeUpIcon className='cardicon' />
-
-//                         </div>
-//                         <span className='h3'>Sound Control</span>
-//                         <span className="cardText">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet</span>
-//                     </div>
-//                     <div className="card">
-//                         <div className="shap">
-//                             <WifiIcon className='cardicon' />
-
-//                         </div>
-//                         <span className='h3'>Wireless Freedom</span>
-//                         <span className="cardText">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet</span>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className='section_2'>
-//                 <div className='h_phone_div'>
-//                     <motion.div
-//                         animate={{ y: [0, 20, 0] }}  // Y-axis animation cycle
-//                         transition={{ duration: 1.5, repeat: Infinity }}
-//                     >
-//                         <img className='headphone2' src={headphone2} />
-
-//                     </motion.div>
-//                 </div>
-//                 <div className='textSection'>
-//                     <span className="sec2_text1">about product</span>
-//                     <span className='sec2_text2'> Awesome digital product can make your life easier</span>
-//                     <Box sx={{ width: '40%', padding: 2 }}>
-//                         <LinearProgress />
-//                     </Box>
-//                     <span className='sec2_text'>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</span>
-
-//                     <span className='sec2_text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.Donec nec justo eget felis facilisis fermentum.</span>
-
-//                 </div>
-//             </div>
-
-
-
-//         </div>
-//     )
-// }
 import React from 'react';
 import './cards.css';
 import Box from '@mui/material/Box';
@@ -90,39 +7,46 @@ import MicIcon from '@mui/icons-material/Mic';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import WifiIcon from '@mui/icons-material/Wifi';
-import { motion } from "framer-motion";
-import headphone2 from '../../assets/headphone2.png';
+import { motion, useInView } from "framer-motion";
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import WorkIcon from '@mui/icons-material/Work';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import purs from '../../assets/purs.png';
 
 export const Cards = () => {
     const cardVariants = {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
     };
+    const refOne = React.useRef(null);
+    const refTwo = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
+    const inViewTwo = useInView(refTwo, { triggerOnce: true });
 
     return (
         <div className='mainCards'>
-            <motion.div 
-                className='section_1' 
-                initial="hidden" 
-                whileInView="visible" 
+            <motion.div
+                className='section_1'
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
+                
             >
                 <motion.div className='headings'>
-                    <motion.span className="h6" variants={cardVariants}>Features</motion.span>
                     <motion.span className="outstanding" variants={cardVariants}>
                         Outstanding Features
                     </motion.span>
-                        <Box sx={{ width: '60%', padding: 2 }}>
-                            <LinearProgress />
-                        </Box>
+                    <div className='line'></div>
                 </motion.div>
 
                 <div className="smallCards">
                     {[
-                        { icon: <MicIcon  className='cardicon' />, title: "Virtual Surround" },
-                        { icon: <MusicNoteIcon  className='cardicon' />, title: "Noise Cancelling" },
-                        { icon: <VolumeUpIcon className='cardicon' />, title: "Sound Control" },
-                        { icon: <WifiIcon className='cardicon' />, title: "Wireless Freedom" }
+                        { icon: <ShoppingBagIcon className='cardicon' />, title: "Multi-Compartment Design",text:'Stay organized with multiple pockets and sections.' },
+                        { icon: <BusinessCenterIcon className='cardicon' />, title: "Adjustable & Detachable Straps",text:'Easily switch between a handbag, shoulder bag.' },
+                        { icon: <WorkIcon className='cardicon' />, title: "Premium Quality Material" ,text:'Crafted from high-quality leather, faux leather, or fabric.'},
+                        { icon: <LocalMallIcon className='cardicon' />, title: "Lightweight & Comfortable Carry " ,text:'Designed for everyday use with a lightweight structure.' }
                     ].map((item, index) => (
                         <motion.div
                             className="card"
@@ -132,46 +56,51 @@ export const Cards = () => {
                             <div className="shap">
                                 {item.icon}
                             </div>
+                            <div className='cardText_div'>
+
                             <span className='h3'>{item.title}</span>
                             <span className="cardText">
-                                Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet
+                               {item.text}
                             </span>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </motion.div>
 
             <div className='section_2'>
-                <div className='h_phone_div'>
+                <motion.div className='h_phone_div'
+                 ref={refTwo}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: .8 }}>
                     <motion.div
                         animate={{ y: [0, 20, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
+
                     >
-                        <img className='headphone2' src={headphone2} alt="Headphone" />
+                        <img className='headphone2' src={purs} alt="Headphone" />
                     </motion.div>
-                </div>
-                
-                <motion.div 
-                    className='textSection' 
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                </motion.div>
+
+                <motion.div
+                    className='textSection'
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    ref={refOne}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={inViewOne ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: .8 }}
                 >
-                    <span className="sec2_text1">about product</span>
+                    {/* <span className="sec2_text1">about product</span> */}
                     <span className='sec2_text2'>
-                        Awesome digital product can make your life easier
+                    The Perfect Fashion Essential to Elevate Your Style
                     </span>
-                    <Box sx={{ width: '60%', padding: 2 }}>
-                        <LinearProgress />
-                    </Box>
+                    <div className='line'></div>
+
                     <span className='sec2_text'>
-                        Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                    Designed for elegance and practicality, this fashion essential complements your look while keeping your essentials organized. Elevate your style effortlessly with a perfect blend of luxury and functionality.
                     </span>
-                    <span className='sec2_text'>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                        Nullam malesuada erat ut turpis. Donec nec justo eget felis facilisis fermentum.
-                    </span>
+                   
                 </motion.div>
             </div>
         </div>
